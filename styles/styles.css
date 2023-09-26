@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url("/assets/Font/AvenirNextLTPro-Regular.otf") format("opentype"), url("/assets/Font/Alternative files/AvenirNextLTPro-Regular") format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url("/assets/Font/AvenirNextLTPro-Demi.otf") format("opentype"), url("/assets/Font/Alternative files/AvenirNextLTPro-Demi") format("opentype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  src: url("/assets/Font/AvenirNextLTPro-Bold.otf") format("opentype"), url("/assets/Font/Alternative files/AvenirNextLTPro-Bold") format("opentype");
+  font-weight: 700;
+}
+body {
+  font-family: "Avenir Next LT Pro", sans-serif;
+}/*# sourceMappingURL=styles.css.map */
