@@ -67,3 +67,29 @@ body {
     color: white;
   }
 }
+
+.hero-section {
+  background-image: url("/assets/Images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-section-container {
+  background: $primary-color-black-opacity;
+  @include desktop {
+    max-width: $desktop-breakpoint;
+    margin: 0 auto;
+  }
+  &__title {
+    color: $primary-color-white;
+    margin: 0;
+    padding: 5rem 1rem;
+    @include page-header;
+    @include tablet {
+      padding: 10rem 2rem;
+    }
+    @include desktop {
+      padding: 20rem 2rem;
+    }
+  }
+}

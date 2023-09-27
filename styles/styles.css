@@ -91,4 +91,44 @@ body {
 .navbar__link {
   text-decoration: none;
   color: white;
+}
+
+.hero-section {
+  background-image: url("/assets/Images/hero-bio.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-section-container {
+  background: rgba(50, 50, 50, 0.5);
+}
+@media screen and (min-width: 1140px) {
+  .hero-section-container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}
+.hero-section-container__title {
+  color: #ffffff;
+  margin: 0;
+  padding: 5rem 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .hero-section-container__title {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-section-container__title {
+    padding: 10rem 2rem;
+  }
+}
+@media screen and (min-width: 1140px) {
+  .hero-section-container__title {
+    padding: 20rem 2rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
