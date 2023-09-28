@@ -9,7 +9,6 @@ body {
 
 .header {
   background-color: $primary-color-black;
-
   &__container {
     display: flex;
     flex-direction: column;
@@ -74,12 +73,11 @@ body {
   background-size: cover;
 }
 
-.hero-section-container {
+.hero-container-overlay {
   background: $primary-color-black-opacity;
-  @include desktop {
-    max-width: $desktop-breakpoint;
-    margin: 0 auto;
-  }
+}
+
+.hero-container {
   &__title {
     color: $primary-color-white;
     margin: 0;
@@ -91,5 +89,68 @@ body {
     @include desktop {
       padding: 20rem 2rem;
     }
+  }
+}
+
+.about-container {
+  padding: 0 1rem;
+
+  &__title {
+    margin: 1.5rem 0 0;
+    @include section-header;
+    @include tablet {
+      margin: 2.5rem 2rem 1rem;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  &__phrase {
+    margin: 0;
+    font-weight: 700;
+    @include subheader;
+    &--author {
+      @include tablet {
+        @include body-copy;
+        padding: 1rem 0;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    @include tablet {
+      @include subheader;
+    }
+  }
+
+  &__description {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__paragraph {
+    @include tablet {
+      width: 47%;
+    }
+  }
+}
+
+.about-container-inner {
+  @include tablet {
+    margin: auto 5rem;
+  }
+}
+
+.hero-container,
+.about-container {
+  @include desktop {
+    max-width: $desktop-breakpoint;
+    margin: 0 auto;
   }
 }
