@@ -27,7 +27,7 @@ body {
     max-width: 7.5rem;
     margin: 1.75rem 1rem 1rem;
     @include tablet {
-      margin: 2rem;
+      margin: 2rem 1rem;
     }
   }
 }
@@ -84,22 +84,20 @@ body {
     padding: 5rem 1rem;
     @include page-header;
     @include tablet {
-      padding: 10rem 2rem;
+      padding: 10rem 1rem;
     }
     @include desktop {
-      padding: 20rem 2rem;
+      padding: 20rem 1rem;
     }
   }
 }
 
 .about-container {
-  padding: 0 1rem;
-
   &__title {
     margin: 1.5rem 0 0;
     @include section-header;
     @include tablet {
-      margin: 2.5rem 2rem 1rem;
+      margin: 2.5rem 1rem 1rem;
     }
   }
 
@@ -147,10 +145,41 @@ body {
   }
 }
 
+.gallery-container {
+  &__title {
+    margin: 1.5rem 0 0;
+    @include section-header;
+    @include tablet {
+      margin: 2.5rem 1rem 1rem;
+    }
+  }
+
+  &__images-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__img {
+    width: 100%;
+    margin: 0.5rem 0;
+    @include tablet {
+      width: 33%;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+  }
+}
+
 .hero-container,
-.about-container {
+.about-container,
+.gallery-container {
   @include desktop {
     max-width: $desktop-breakpoint;
     margin: 0 auto;
   }
+}
+
+.about-container,
+.gallery-container {
+  padding: 0rem;
 }
