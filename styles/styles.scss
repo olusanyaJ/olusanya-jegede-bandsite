@@ -170,6 +170,135 @@ body {
   }
 }
 
+.footer {
+  background-color: $primary-color-black;
+  color: white;
+
+  &__container {
+    padding: 0 1rem;
+    @include desktop {
+      max-width: $desktop-breakpoint;
+      margin: 0 auto;
+    }
+  }
+
+  &__socials {
+    @include tablet {
+      padding: 3rem 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__icons {
+    padding-bottom: 1.5rem;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    padding: 3rem 0 1rem;
+    @include section-header;
+    @include tablet {
+      padding: 0;
+      margin-right: 1.5rem;
+    }
+  }
+
+  &__link {
+    padding-right: 1rem;
+    @include tablet {
+      padding: 0 2rem 0 0;
+    }
+  }
+
+  &__icon {
+    height: 1.5rem;
+  }
+
+  &__logo {
+    &--tablet {
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__contact {
+    padding-bottom: 2rem;
+    @include tablet {
+      display: flex;
+      padding: 0 1rem;
+    }
+  }
+
+  &__address {
+    @include tablet {
+      margin-right: 1.5rem;
+    }
+    @include desktop {
+      margin-right: 5rem;
+    }
+  }
+
+  &__name {
+    margin-bottom: 0;
+    @include subheader;
+    @include tablet {
+      margin-top: 0;
+      font-size: 1rem;
+    }
+  }
+
+  &__company {
+    margin-top: 0;
+    @include subheader;
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+
+  &__postcode {
+    @include body-copy;
+  }
+
+  &__email {
+    @include footer-copy;
+    margin-bottom: 2rem;
+  }
+
+  &__img {
+    &--mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__copyright {
+    @include tablet {
+      display: flex;
+      padding: 0 1rem;
+    }
+  }
+
+  &__rights {
+    padding: 0.5rem 0 3rem;
+    margin: 0;
+    @include labels-and-buttons;
+    font-weight: 400;
+    @include desktop {
+      @include body-copy;
+    }
+  }
+}
+
 .hero-container,
 .about-container,
 .gallery-container {
@@ -181,5 +310,5 @@ body {
 
 .about-container,
 .gallery-container {
-  padding: 0rem;
+  padding: 1rem;
 }
