@@ -3,12 +3,7 @@
 @use "./partials/reset";
 @use "./partials/typography" as *;
 
-body {
-  font-family: "Avenir Next LT Pro", sans-serif;
-}
-
 .header {
-  background-color: $primary-color-black;
   &__container {
     display: flex;
     flex-direction: column;
@@ -27,6 +22,10 @@ body {
     max-width: 7.5rem;
     margin: 1.75rem 1rem 1rem;
     @include tablet {
+      margin: 2rem 3rem;
+    }
+
+    @include desktop {
       margin: 2rem 1rem;
     }
   }
@@ -39,7 +38,6 @@ body {
     justify-content: center;
     padding: 0;
     width: 100%;
-    margin: 0;
     @include tablet {
       justify-content: flex-start;
     }
@@ -61,26 +59,34 @@ body {
     }
   }
 
+  &__item:hover {
+    border-bottom: 5px solid $primary-color-white;
+  }
+
   &__link {
     text-decoration: none;
-    color: white;
+    color: $secondary-color-mercury;
+    &--active {
+      color: $primary-color-white;
+    }
+  }
+
+  &__link:hover {
+    color: $primary-color-white;
   }
 }
 
-.hero-section {
+.hero {
   background-image: url("/assets/Images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
-}
 
-.hero-container-overlay {
-  background: $primary-color-black-opacity;
-}
+  &__overlay {
+    background: $primary-color-black-opacity;
+  }
 
-.hero-container {
   &__title {
     color: $primary-color-white;
-    margin: 0;
     padding: 5rem 1rem;
     @include page-header;
     @include tablet {
@@ -92,12 +98,18 @@ body {
   }
 }
 
-.about-container {
+.about {
   &__title {
     margin: 1.5rem 0 0;
     @include section-header;
     @include tablet {
       margin: 2.5rem 1rem 1rem;
+    }
+  }
+
+  &__banner {
+    @include tablet {
+      margin: auto 5rem;
     }
   }
 
@@ -107,13 +119,13 @@ body {
   }
 
   &__phrase {
-    margin: 0;
     font-weight: 700;
     @include subheader;
     &--author {
       @include tablet {
         @include body-copy;
         padding: 1rem 0;
+        font-weight: 600;
       }
     }
   }
@@ -139,13 +151,9 @@ body {
   }
 }
 
-.about-container-inner {
-  @include tablet {
-    margin: auto 5rem;
-  }
-}
+.gallery {
+  background-color: $secondary-color-alabaster;
 
-.gallery-container {
   &__title {
     margin: 1.5rem 0 0;
     @include section-header;
@@ -162,25 +170,22 @@ body {
   &__img {
     width: 100%;
     margin: 0.5rem 0;
+    filter: grayscale(1);
     @include tablet {
       width: 33%;
       margin: 0 auto;
       padding: 1rem;
     }
   }
+
+  &__img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+  }
 }
 
 .footer {
-  background-color: $primary-color-black;
   color: white;
-
-  &__container {
-    padding: 0 1rem;
-    @include desktop {
-      max-width: $desktop-breakpoint;
-      margin: 0 auto;
-    }
-  }
 
   &__socials {
     @include tablet {
@@ -201,7 +206,8 @@ body {
   }
 
   &__title {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 3rem 0 1rem;
     @include section-header;
     @include tablet {
@@ -271,6 +277,11 @@ body {
   &__email {
     @include footer-copy;
     margin-bottom: 2rem;
+    &--link {
+      color: white;
+      font-style: normal;
+      text-decoration: none;
+    }
   }
 
   &__img {
@@ -290,7 +301,6 @@ body {
 
   &__rights {
     padding: 0.5rem 0 3rem;
-    margin: 0;
     @include labels-and-buttons;
     font-weight: 400;
     @include desktop {
@@ -299,16 +309,30 @@ body {
   }
 }
 
-.hero-container,
-.about-container,
-.gallery-container {
+.navbar__list,
+.hero__title,
+.about__phrase,
+.footer__rights {
+  margin: 0;
+}
+
+.header,
+.footer {
+  background-color: $primary-color-black;
+}
+
+.hero__container,
+.about__container,
+.gallery__container,
+.footer__container {
   @include desktop {
     max-width: $desktop-breakpoint;
     margin: 0 auto;
   }
 }
 
-.about-container,
-.gallery-container {
+.about__container,
+.gallery__container,
+.footer__container {
   padding: 1rem;
 }
