@@ -2,6 +2,9 @@
 $primary-color-black: #323232;
 $primary-color-silver: #afafaf;
 $primary-color-white: #ffffff;
+
+$primary-color-black-opacity: rgb(50, 50, 50, 0.5);
+
 $secondary-color-black: #000000;
 $secondary-color-mercury: #e1e1e1;
 $secondary-color-alabaster: #fafafa;
@@ -9,4 +12,4 @@ $secondary-color-alabaster: #fafafa;
 // screen sizes
 $mobile-breakpoint: 320px;
 $tablet-breakpoint: 768px;
-$desktop-breakpoint: 1280px;
+$desktop-breakpoint: 1140px;
