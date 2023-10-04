@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <div class="header__container">
-        <a href="./index.html" class="header__link">
+        <a href="/index.html" class="header__link">
           <img
             class="header__logo"
             src="/assets/logos/Logo-bandsite.svg"
@@ -20,7 +20,7 @@
         <nav class="navbar">
           <ul class="navbar__list">
             <li class="navbar__item">
-              <a href="./index.html" class="navbar__link navbar__link--active"
+              <a href="/index.html" class="navbar__link navbar__link--active"
                 >Biography</a
               >
             </li>
@@ -33,7 +33,44 @@
     </header>
 
     <main>
-      <h1>lorem lorem</h1>
+      <section class="hero shows-bg">
+        <div class="hero__overlay">
+          <div class="hero__container shows-bg__container">
+            <h1 class="shows-bg__album">Beautiful Beasts album</h1>
+            <div class="shows-bg__artist">
+              <h2 class="shows-bg__title">Queen of Yellow x For The Stings</h2>
+              <iframe
+                width="100%"
+                height="auto"
+                scrolling="no"
+                frameborder="no"
+                allow="autoplay"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1442761462&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shows">
+        <div class="shows__container">
+          <h3 class="shows__heading">Shows</h3>
+          <div class="shows__labels">
+            <p class="shows__label">date</p>
+            <p class="shows__label">venue</p>
+            <p class="shows__label">location</p>
+          </div>
+          <article class="show">
+            <p class="show__label">date</p>
+            <p class="show__date">monday</p>
+            <p class="show__label">venue</p>
+            <p class="show__venue">brainstation</p>
+            <p class="show__label">location</p>
+            <p class="show__location">london</p>
+            <button class="show__button">click</button>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">

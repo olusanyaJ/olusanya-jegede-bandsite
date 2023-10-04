@@ -184,8 +184,168 @@
   }
 }
 
+.comments {
+  &__title {
+    margin: 0;
+    padding-bottom: 1rem;
+    @include section-header;
+  }
+
+  &__subcontainer {
+    display: flex;
+    margin-bottom: 1.5rem;
+    @include tablet {
+      margin: auto 5rem;
+    }
+    @include desktop {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+
+  &__display {
+    margin-bottom: 1.5rem;
+    @include tablet {
+      margin: auto 5rem;
+    }
+    @include desktop {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+
+  &__divider {
+    stroke-width: 0.0625rem;
+    color: $secondary-color-mercury;
+    @include tablet {
+      margin: 1rem 5rem;
+    }
+    @include desktop {
+      width: 50%;
+      margin: 1rem auto;
+    }
+  }
+
+  &__img {
+    width: 2.25rem;
+    height: 2.255rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-top: 1.25rem;
+    @include tablet {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &__wrapper {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__user-img {
+    width: 9rem;
+    height: 2.255rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    background-color: $secondary-color-mercury;
+    @include tablet {
+      width: 6rem;
+      height: 3rem;
+    }
+  }
+
+  &__comment {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+  }
+
+  &__user,
+  &__date,
+  &__user-post {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__user,
+  &__date {
+    @include subheader;
+  }
+
+  &__date {
+    color: $primary-color-silver;
+    font-weight: 300;
+  }
+
+  &__user-post {
+    color: $primary-color-black;
+    @include body-copy;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    width: 90%;
+  }
+
+  &__group {
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    color: $primary-color-silver;
+    font-size: 0.75rem;
+  }
+
+  &__input {
+    background-color: $secondary-color-alabaster;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid $secondary-color-mercury;
+
+    &::placeholder {
+      color: $primary-color-black;
+      font-family: "Avenir Next LT Pro", sans-serif;
+      @include labels-and-buttons;
+    }
+  }
+
+  &__area {
+    background-color: $secondary-color-alabaster;
+    padding: 1rem;
+    height: 6rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid $secondary-color-mercury;
+
+    &::placeholder {
+      color: $primary-color-black;
+      font-family: "Avenir Next LT Pro", sans-serif;
+      @include labels-and-buttons;
+    }
+  }
+
+  &__button {
+    padding: 0.5rem;
+    max-width: 15rem;
+    border-radius: 0.3125rem;
+    border: 0;
+    background-color: $primary-color-black;
+    color: $primary-color-white;
+    @include labels-and-buttons;
+    @include tablet {
+      margin-left: 22rem;
+    }
+  }
+}
+
 .footer {
-  color: white;
+  color: $primary-color-white;
 
   &__socials {
     @include tablet {
@@ -278,7 +438,7 @@
     @include footer-copy;
     margin-bottom: 2rem;
     &--link {
-      color: white;
+      color: $primary-color-white;
       font-style: normal;
       text-decoration: none;
     }
@@ -324,6 +484,7 @@
 .hero__container,
 .about__container,
 .gallery__container,
+.comments__container,
 .footer__container {
   @include desktop {
     max-width: $desktop-breakpoint;
@@ -333,6 +494,8 @@
 
 .about__container,
 .gallery__container,
+.shows-bg__container,
+.comments__container,
 .footer__container {
   padding: 1rem;
 }

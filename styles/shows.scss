@@ -3,6 +3,21 @@
 @use "./partials/reset";
 @use "./partials/typography" as *;
 
-h1 {
-  color: red;
+.shows-bg {
+  background-image: url("/assets/images/hero-shows.jpg");
+
+  &__album {
+    color: $primary-color-white;
+    margin: 0;
+  }
+
+  &__title {
+    color: $primary-color-white;
+    width: 80%;
+    margin: 0;
+  }
+
+  &__artist {
+    border: 2px solid green;
+  }
 }

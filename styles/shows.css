@@ -27,6 +27,18 @@ body {
   font-family: "Avenir Next LT Pro", sans-serif;
 }
 
-h1 {
-  color: red;
+.shows-bg {
+  background-image: url("/assets/images/hero-shows.jpg");
+}
+.shows-bg__album {
+  color: #ffffff;
+  margin: 0;
+}
+.shows-bg__title {
+  color: #ffffff;
+  width: 80%;
+  margin: 0;
+}
+.shows-bg__artist {
+  border: 2px solid green;
 }/*# sourceMappingURL=shows.css.map */

@@ -25,7 +25,7 @@
               >
             </li>
             <li class="navbar__item">
-              <a href="#" class="navbar__link">Shows</a>
+              <a href="./pages/shows.html" class="navbar__link">Shows</a>
             </li>
           </ul>
         </nav>
@@ -142,7 +142,57 @@
 
       <section class="comments">
         <div class="comments__container">
-          <h1>comments</h1>
+          <h3 class="comments__title">Join the conversation</h3>
+          <div class="comments__subcontainer">
+            <img
+              src="./assets/images/Mohan-muruge.jpg"
+              alt="an headshot of mohan muruge"
+              class="comments__img"
+            />
+
+            <form class="form">
+              <div class="form__group">
+                <label for="name" class="form__label">NAME</label>
+                <input
+                  type="text"
+                  class="form__input"
+                  name="name"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="form__group">
+                <label for="comment" class="form__label">COMMENT</label>
+                <textarea
+                  name="comment"
+                  id="comment"
+                  class="form__area"
+                  placeholder="Add a new comment"
+                ></textarea>
+              </div>
+              <button type="submit" class="form__button">COMMENT</button>
+            </form>
+          </div>
+
+          <hr class="comments__divider" />
+
+          <div class="comments__display">
+            <article class="comments__wrapper">
+              <div class="comments__user-img"></div>
+              <div class="comments__card">
+                <div class="comments__comment">
+                  <p class="comments__user">Connor Walton</p>
+                  <p class="comments__date">02/17/2021</p>
+                </div>
+                <p class="comments__user-post">
+                  This is art. This is inexplicable magic expressed in the
+                  purest way, everything that makes up this majestic work
+                  deserves reverence. Let us appreciate this for what it is and
+                  what it contains.
+                </p>
+              </div>
+            </article>
+          </div>
+          <hr class="comments__divider" />
         </div>
       </section>
     </main>
@@ -153,7 +203,7 @@
           <!-- E .footer__socials -->
           <div class="footer__icons">
             <!-- E .footer__socials -->
-            <h3 class="footer__title">Get In Touch</h3>
+            <h4 class="footer__title">Get In Touch</h4>
             <a class="footer__link" href="https://www.instagram.com/"
               ><img
                 class="footer__icon"
@@ -182,7 +232,7 @@
 
         <div class="footer__contact">
           <div class="footer__address">
-            <h3 class="footer__name">Cam Adams</h3>
+            <h4 class="footer__name">Cam Adams</h4>
             <p class="footer__company">The Bees Knees Management</p>
             <p class="footer__postcode">
               503 Broadway Penthouse, <br />New York, NY 10012, USA
@@ -195,7 +245,7 @@
           </div>
 
           <div class="footer__address">
-            <h3 class="footer__name">Pearl Gregg</h3>
+            <h4 class="footer__name">Pearl Gregg</h4>
             <p class="footer__company">Limitless Artist Group</p>
             <p class="footer__postcode">
               Booking Agent for <br />USA / South America / Japan
@@ -210,7 +260,7 @@
           </div>
 
           <div class="footer__address">
-            <h3 class="footer__name">Carson Whyte</h3>
+            <h4 class="footer__name">Carson Whyte</h4>
             <p class="footer__company">ARCH Entertainment</p>
             <p class="footer__postcode">Booking Agent for<br />UK / EU / AU</p>
             <address class="footer__email">
