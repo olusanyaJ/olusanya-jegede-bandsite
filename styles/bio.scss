@@ -218,11 +218,11 @@
     stroke-width: 0.0625rem;
     color: $secondary-color-mercury;
     @include tablet {
-      margin: 1rem 5rem;
+      margin: 2rem 5rem;
     }
     @include desktop {
       width: 50%;
-      margin: 1rem auto;
+      margin: 2rem auto;
     }
   }
 
@@ -251,7 +251,7 @@
     margin-right: 1rem;
     background-color: $secondary-color-mercury;
     @include tablet {
-      width: 6rem;
+      width: 8rem;
       height: 3rem;
     }
   }
@@ -272,6 +272,10 @@
   &__user,
   &__date {
     @include subheader;
+    @include tablet {
+      @include body-copy;
+      font-weight: 600;
+    }
   }
 
   &__date {
