@@ -96,6 +96,7 @@
 
 .about {
   &__title {
+    color: $primary-color-black;
     margin: 1.5rem 0 0;
     @include section-header;
     @include tablet {
@@ -151,6 +152,7 @@
   background-color: $secondary-color-alabaster;
 
   &__title {
+    color: $primary-color-black;
     margin: 1.5rem 0 0;
     @include section-header;
     @include tablet {
