@@ -34,12 +34,13 @@
 
     <main>
       <section class="hero shows-bg">
-        <div class="hero__overlay">
-          <div class="hero__container shows-bg__container">
-            <h1 class="shows-bg__album">Beautiful Beasts album</h1>
+        <div class="shows-bg__overlay">
+          <div class="shows-bg__container">
+            <h1 class="shows-bg__album">Beautiful Beasts Album</h1>
             <div class="shows-bg__artist">
               <h2 class="shows-bg__title">Queen of Yellow x For The Stings</h2>
               <iframe
+                class="show-bg__player"
                 width="100%"
                 height="auto"
                 scrolling="no"
@@ -55,20 +56,23 @@
       <section class="shows">
         <div class="shows__container">
           <h3 class="shows__heading">Shows</h3>
-          <div class="shows__labels">
-            <p class="shows__label">date</p>
-            <p class="shows__label">venue</p>
-            <p class="shows__label">location</p>
+          <div class="shows__wrap">
+            <div class="shows__labels">
+              <p class="shows__label">DATE</p>
+              <p class="shows__label shows__label--edit">VENUE</p>
+              <p class="shows__label shows__label--mg">LOCATION</p>
+            </div>
+            <article class="show">
+              <p class="show__label">DATE</p>
+              <p class="show__date">Mon Sept 06 2021</p>
+              <p class="show__label">VENUE</p>
+              <p class="show__venue">Ronald Lane</p>
+              <p class="show__label">LOCATION</p>
+              <p class="show__location">San Francisco, CA</p>
+              <button class="show__button">BUY TCIKETS</button>
+            </article>
+            <hr class="show__divider" />
           </div>
-          <article class="show">
-            <p class="show__label">date</p>
-            <p class="show__date">monday</p>
-            <p class="show__label">venue</p>
-            <p class="show__venue">brainstation</p>
-            <p class="show__label">location</p>
-            <p class="show__location">london</p>
-            <button class="show__button">click</button>
-          </article>
         </div>
       </section>
     </main>

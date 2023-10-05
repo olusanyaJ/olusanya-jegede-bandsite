@@ -81,19 +81,15 @@
   background-position: center;
   background-size: cover;
 
-  &__overlay {
-    background: $primary-color-black-opacity;
-  }
-
   &__title {
     color: $primary-color-white;
-    padding: 5rem 1rem;
+    padding: 5rem 0;
     @include page-header;
     @include tablet {
-      padding: 10rem 1rem;
+      padding: 10rem 0;
     }
     @include desktop {
-      padding: 20rem 1rem;
+      padding: 20rem 0;
     }
   }
 }
@@ -103,7 +99,7 @@
     margin: 1.5rem 0 0;
     @include section-header;
     @include tablet {
-      margin: 2.5rem 1rem 1rem;
+      margin: 2.5rem 0 1rem;
     }
   }
 
@@ -158,7 +154,7 @@
     margin: 1.5rem 0 0;
     @include section-header;
     @include tablet {
-      margin: 2.5rem 1rem 1rem;
+      margin: 2.5rem 0 1rem;
     }
   }
 
@@ -216,7 +212,7 @@
 
   &__divider {
     stroke-width: 0.0625rem;
-    color: $secondary-color-mercury;
+    fill: $secondary-color-mercury;
     @include tablet {
       margin: 2rem 5rem;
     }
@@ -353,7 +349,7 @@
 
   &__socials {
     @include tablet {
-      padding: 3rem 1rem;
+      padding: 3rem 0;
       display: flex;
       justify-content: space-between;
     }
@@ -404,7 +400,7 @@
     padding-bottom: 2rem;
     @include tablet {
       display: flex;
-      padding: 0 1rem;
+      padding: 0 0;
     }
   }
 
@@ -459,7 +455,7 @@
   &__copyright {
     @include tablet {
       display: flex;
-      padding: 0 1rem;
+      padding: 0 0;
     }
   }
 
@@ -488,18 +484,37 @@
 .hero__container,
 .about__container,
 .gallery__container,
-.comments__container,
-.footer__container {
-  @include desktop {
-    max-width: $desktop-breakpoint;
-    margin: 0 auto;
-  }
-}
-
-.about__container,
-.gallery__container,
 .shows-bg__container,
 .comments__container,
 .footer__container {
   padding: 1rem;
+  @include tablet {
+    padding: 1rem 3rem;
+  }
+}
+
+.hero__container,
+.about__container,
+.gallery__container,
+.comments__container,
+.shows__container,
+.shows-bg__container,
+.footer__container {
+  @include desktop {
+    max-width: $desktop-breakpoint;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+}
+
+.form__label,
+.show__label,
+.shows__label {
+  color: $primary-color-silver;
+  @include labels-and-buttons;
+}
+
+.hero__overlay,
+.shows-bg__overlay {
+  background: $primary-color-black-opacity;
 }

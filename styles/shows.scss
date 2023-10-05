@@ -6,18 +6,193 @@
 .shows-bg {
   background-image: url("/assets/images/hero-shows.jpg");
 
+  &__container {
+    @include tablet {
+      padding: 1rem 3rem;
+    }
+    @include desktop {
+      padding: 15rem 1rem;
+    }
+  }
+
   &__album {
     color: $primary-color-white;
     margin: 0;
+    @include subheader;
+    padding: 0.5rem 0;
+    font-weight: 400;
+    @include tablet {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__artist {
+    margin-bottom: 1.25rem;
+    @include tablet {
+      width: 80%;
+      margin-bottom: 2.5rem;
+    }
+    @include desktop {
+      width: 100%;
+      display: flex;
+    }
   }
 
   &__title {
     color: $primary-color-white;
     width: 80%;
     margin: 0;
+    padding: 1rem 0;
+    line-height: 1.5;
+    @include tablet {
+      @include page-header;
+      width: 100%;
+      padding: 2rem 0 3rem;
+    }
+    @include desktop {
+      padding: 0 3rem 0 0;
+      line-height: 1.3;
+    }
   }
 
-  &__artist {
-    border: 2px solid green;
+  &__player {
+    @include tablet {
+      width: 50%;
+    }
+    @include desktop {
+      width: 40%;
+    }
+  }
+}
+
+.shows {
+  padding: 1rem;
+
+  @include tablet {
+    padding: 0;
+  }
+
+  &__container {
+    @include tablet {
+      padding: 1rem 3rem;
+    }
+
+    @include desktop {
+      display: flex;
+      padding: 2rem 1rem 1rem;
+    }
+  }
+
+  &__heading {
+    @include page-header;
+    @include tablet {
+      @include subheader;
+    }
+
+    @include desktop {
+      @include page-header;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-right: 7.5rem;
+    }
+  }
+
+  &__wrap {
+    @include desktop {
+      width: 100%;
+    }
+  }
+
+  &__labels {
+    display: none;
+    @include tablet {
+      display: flex;
+      font-weight: 600;
+      justify-content: space-between;
+    }
+    @include desktop {
+      padding-top: 1rem;
+    }
+  }
+
+  &__label {
+    @include desktop {
+      font-size: 1.125rem;
+      margin-bottom: 0;
+    }
+    &--edit {
+      margin-left: 4rem;
+    }
+
+    &--mg {
+      margin-right: 16.5rem;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include tablet {
+      display: block;
+      width: auto;
+      padding: 0.5rem;
+      border-radius: 5px;
+      color: $primary-color-white;
+      background-color: $primary-color-black;
+    }
+  }
+}
+
+.show {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @include desktop {
+    padding: 1.5rem 0;
+  }
+
+  &__label {
+    @include tablet {
+      display: none;
+    }
+  }
+  &__date,
+  &__venue,
+  &__location {
+    @include subheader;
+    @include tablet {
+      font-size: 1.125rem;
+      margin: 0;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    color: $primary-color-white;
+    background-color: $primary-color-black;
+    font-weight: 600;
+    @include labels-and-buttons;
+    font-size: 1rem;
+    @include tablet {
+      width: auto;
+      padding: 0.5rem 1.5rem;
+    }
+  }
+
+  &__divider {
+    stroke-width: 0.0625rem;
+    max-width: 100%;
+    fill: $secondary-color-mercury;
+    margin: 1.5rem 0;
+    @include tablet {
+      margin: 1rem 0;
+    }
+    @include desktop {
+      margin: 1rem 0;
+    }
   }
 }
