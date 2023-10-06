@@ -212,18 +212,6 @@
     }
   }
 
-  &__divider {
-    stroke-width: 0.0625rem;
-    fill: $secondary-color-mercury;
-    @include tablet {
-      margin: 2rem 5rem;
-    }
-    @include desktop {
-      width: 50%;
-      margin: 2rem auto;
-    }
-  }
-
   &__img {
     width: 2.25rem;
     height: 2.255rem;
@@ -238,19 +226,24 @@
 
   &__wrapper {
     margin: 1rem 0;
+  }
+
+  &__flex {
     display: flex;
-    justify-content: space-between;
+    padding: 1.5rem 0;
+    border-top: 0.0625rem solid $secondary-color-mercury;
   }
 
   &__user-img {
-    width: 9rem;
+    width: 15%;
+    // width: 9rem;
     height: 2.255rem;
     border-radius: 50%;
     margin-right: 1rem;
     background-color: $secondary-color-mercury;
     @include tablet {
-      width: 8rem;
-      height: 3rem;
+      width: 12%;
+      height: 3.5rem;
     }
   }
 
@@ -274,6 +267,10 @@
       @include body-copy;
       font-weight: 600;
     }
+  }
+
+  &__card {
+    width: 85%;
   }
 
   &__date {
@@ -343,6 +340,10 @@
     @include tablet {
       margin-left: 22rem;
     }
+  }
+
+  &__invalid-input {
+    border: 1px solid red;
   }
 }
 
