@@ -1,4 +1,3 @@
-// array of comments
 const comments = [
   {
     name: "Connor Walton",
@@ -24,7 +23,6 @@ const sumbitHandler = (event) => {
   event.preventDefault();
   const form = event.target;
 
-  // Create a new object (using the values from the form) which represents a comment
   const comment = {
     name: form.name.value,
     date: new Date(),
@@ -49,73 +47,61 @@ const sumbitHandler = (event) => {
     );
   }
 
-  // Push the new object to the comments array
   comments.push(comment);
-  // After we've saved the booking, re-render the bookings list (to update the DOM)
+
   displayComments();
-  // Clear all of the form values
+
   form.reset();
 };
 
-// Register a submit event handler for the form submit event
 const formEl = document.querySelector(".form");
 formEl.addEventListener("submit", sumbitHandler);
 
-// Get the booking list element (we'll append new bookings to this later)
 const commentsList = document.querySelector(".comments__wrapper");
 
-// A function (to be used in a loop) which takes in a single comment object,
-// builds various DOM elements and append to the DOM
 const displayCommentCard = (comment) => {
-  // The grandparent div for the img
   const commentFlex = document.createElement("div");
   commentFlex.classList.add("comments__flex");
-  // The parent div for the img
+
   const commentImage = document.createElement("div");
   commentImage.classList.add("comments__user-img");
-  // The parent div
+
   const commentCard = document.createElement("div");
   commentCard.classList.add("comments__card");
-  // The child div
+
   const commentDetails = document.createElement("div");
   commentDetails.classList.add("comments__comment");
   commentCard.appendChild(commentDetails);
-  // The grand child p
+
   const commentAuthor = document.createElement("p");
   commentAuthor.classList.add("comments__user");
   commentAuthor.innerText = comment.name;
   commentDetails.appendChild(commentAuthor);
-  // The grand child p
+
   const commentDate = document.createElement("p");
   commentDate.classList.add("comments__date");
   commentDate.innerText = comment.date.toLocaleDateString();
   commentDetails.appendChild(commentDate);
-  // The child paragraph
+
   const comments = document.createElement("p");
   comments.classList.add("comments__user-post");
   comments.innerText = comment.comment;
   commentCard.appendChild(comments);
 
-  // Append the parent to the grandparent
   commentFlex.appendChild(commentImage);
   commentFlex.appendChild(commentCard);
-  // Append the grandparent article to the comments list
+
   commentsList.appendChild(commentFlex);
 };
 
-// A function which clears the existing comments from the DOM, and loops over them again
 const displayComments = () => {
-  // Set the comments list element HTML to nothing (i.e. remove them all to avoid duplicates)
   commentsList.innerHTML = "";
 
-  // Loop through the comments array
   for (let i = 0; i < comments.length; i++) {
-    // A variable for the individual booking object inside the loop (to make the following code easier to read)
     const comment = comments[i];
-    // Call the displayCommentCard() function, passing the booking object
+
     displayCommentCard(comment);
   }
 };
 
-// Invoke the displayComments() function on page load to show the comments
 displayComments();

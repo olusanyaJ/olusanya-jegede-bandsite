@@ -65,134 +65,134 @@
   }
 }
 
-.shows {
-  padding: 1rem;
+// .shows {
+//   padding: 1rem;
 
-  @include tablet {
-    padding: 0;
-  }
+//   @include tablet {
+//     padding: 0;
+//   }
 
-  &__container {
-    @include tablet {
-      padding: 1rem 3rem;
-    }
+//   &__container {
+//     @include tablet {
+//       padding: 1rem 3rem;
+//     }
 
-    @include desktop {
-      display: flex;
-      padding: 2rem 1rem 1rem;
-    }
-  }
+//     @include desktop {
+//       display: flex;
+//       padding: 2rem 1rem 1rem;
+//     }
+//   }
 
-  &__heading {
-    @include page-header;
-    @include tablet {
-      @include subheader;
-    }
+//   &__heading {
+//     @include page-header;
+//     @include tablet {
+//       @include subheader;
+//     }
 
-    @include desktop {
-      @include page-header;
-      margin-top: 0;
-      margin-bottom: 0;
-      margin-right: 7.5rem;
-    }
-  }
+//     @include desktop {
+//       @include page-header;
+//       margin-top: 0;
+//       margin-bottom: 0;
+//       margin-right: 7.5rem;
+//     }
+//   }
 
-  &__wrap {
-    @include desktop {
-      width: 100%;
-    }
-  }
+//   &__wrap {
+//     @include desktop {
+//       width: 100%;
+//     }
+//   }
 
-  &__labels {
-    display: none;
-    @include tablet {
-      display: flex;
-      font-weight: 600;
-      justify-content: space-between;
-    }
-    @include desktop {
-      padding-top: 1rem;
-    }
-  }
+//   &__labels {
+//     display: none;
+//     @include tablet {
+//       display: flex;
+//       font-weight: 600;
+//       justify-content: space-between;
+//     }
+//     @include desktop {
+//       padding-top: 1rem;
+//     }
+//   }
 
-  &__label {
-    @include desktop {
-      font-size: 1.125rem;
-      margin-bottom: 0;
-    }
-    &--edit {
-      margin-left: 4rem;
-    }
+//   &__label {
+//     @include desktop {
+//       font-size: 1.125rem;
+//       margin-bottom: 0;
+//     }
+//     &--edit {
+//       margin-left: 4rem;
+//     }
 
-    &--mg {
-      margin-right: 16.5rem;
-    }
-  }
+//     &--mg {
+//       margin-right: 16.5rem;
+//     }
+//   }
 
-  &__button {
-    display: none;
+//   &__button {
+//     display: none;
 
-    @include tablet {
-      display: block;
-      width: auto;
-      padding: 0.5rem;
-      border-radius: 5px;
-      color: $primary-color-white;
-      background-color: $primary-color-black;
-    }
-  }
-}
+//     @include tablet {
+//       display: block;
+//       width: auto;
+//       padding: 0.5rem;
+//       border-radius: 5px;
+//       color: $primary-color-white;
+//       background-color: $primary-color-black;
+//     }
+//   }
+// }
 
-.show {
-  @include tablet {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  @include desktop {
-    padding: 1.5rem 0;
-  }
+// .show {
+//   @include tablet {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//   }
+//   @include desktop {
+//     padding: 1.5rem 0;
+//   }
 
-  &__label {
-    @include tablet {
-      display: none;
-    }
-  }
-  &__date,
-  &__venue,
-  &__location {
-    @include subheader;
-    @include tablet {
-      font-size: 1.125rem;
-      margin: 0;
-    }
-  }
+//   &__label {
+//     @include tablet {
+//       display: none;
+//     }
+//   }
+//   &__date,
+//   &__venue,
+//   &__location {
+//     @include subheader;
+//     @include tablet {
+//       font-size: 1.125rem;
+//       margin: 0;
+//     }
+//   }
 
-  &__button {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 5px;
-    color: $primary-color-white;
-    background-color: $primary-color-black;
-    font-weight: 600;
-    @include labels-and-buttons;
-    font-size: 1rem;
-    @include tablet {
-      width: auto;
-      padding: 0.5rem 1.5rem;
-    }
-  }
+//   &__button {
+//     width: 100%;
+//     padding: 1rem;
+//     border-radius: 5px;
+//     color: $primary-color-white;
+//     background-color: $primary-color-black;
+//     font-weight: 600;
+//     @include labels-and-buttons;
+//     font-size: 1rem;
+//     @include tablet {
+//       width: auto;
+//       padding: 0.5rem 1.5rem;
+//     }
+//   }
 
-  &__divider {
-    stroke-width: 0.0625rem;
-    max-width: 100%;
-    fill: $secondary-color-mercury;
-    margin: 1.5rem 0;
-    @include tablet {
-      margin: 1rem 0;
-    }
-    @include desktop {
-      margin: 1rem 0;
-    }
-  }
-}
+//   &__divider {
+//     stroke-width: 0.0625rem;
+//     max-width: 100%;
+//     fill: $secondary-color-mercury;
+//     margin: 1.5rem 0;
+//     @include tablet {
+//       margin: 1rem 0;
+//     }
+//     @include desktop {
+//       margin: 1rem 0;
+//     }
+//   }
+// }
