@@ -31,45 +31,11 @@ const shows = [
   },
 ];
 
-// buy tickets function
-/* 
-const buyTickets = (event) => {
-  const buyTicket = event.target;
-
-  // Push the new object to the comments array
-  shows.push(show);
-  // After we've saved the booking, re-render the bookings list (to update the DOM)
-  displayShows();
-};
-*/
-
-// buy ticket event handler for the button
-// const buyTicketsButton = document.querySelector(".show__button");
-// buyTicketsButton.addEventListener("click", buyTickets);
-
 const showsContainer = document.querySelector(".shows__wrap");
 
 const displayShowCard = (show) => {
-  const showsTabletHeading = document.createElement("div");
-  showsTabletHeading.classList.add("shows__labels");
-
   const showsListing = document.createElement("article");
   showsListing.classList.add("show");
-
-  const dateTabLabel = document.createElement("p");
-  dateTabLabel.classList.add("shows__label");
-  dateTabLabel.innerText = "DATE";
-  showsTabletHeading.appendChild(dateTabLabel);
-
-  const venueTabLabel = document.createElement("p");
-  venueTabLabel.classList.add("shows__label");
-  venueTabLabel.innerText = "VENUE";
-  showsTabletHeading.appendChild(venueTabLabel);
-
-  const locationTabLabel = document.createElement("p");
-  locationTabLabel.classList.add("shows__label");
-  locationTabLabel.innerText = "LOCATION";
-  showsTabletHeading.appendChild(locationTabLabel);
 
   const dateLabel = document.createElement("p");
   dateLabel.classList.add("show__label");
@@ -106,12 +72,33 @@ const displayShowCard = (show) => {
   buyTicketButton.innerText = "BUY TICKETS";
   showsListing.appendChild(buyTicketButton);
 
-  showsContainer.appendChild(showsTabletHeading);
   showsContainer.appendChild(showsListing);
 };
 
 const displayShows = () => {
   showsContainer.innerHTML = "";
+
+  const showsTabletHeading = document.createElement("div");
+  showsTabletHeading.classList.add("shows__labels");
+
+  const dateTabLabel = document.createElement("p");
+  dateTabLabel.classList.add("shows__label");
+  dateTabLabel.innerText = "DATE";
+  showsTabletHeading.appendChild(dateTabLabel);
+
+  const venueTabLabel = document.createElement("p");
+  venueTabLabel.classList.add("shows__label");
+  venueTabLabel.classList.add("shows__label--left");
+  venueTabLabel.innerText = "VENUE";
+  showsTabletHeading.appendChild(venueTabLabel);
+
+  const locationTabLabel = document.createElement("p");
+  locationTabLabel.classList.add("shows__label");
+  locationTabLabel.classList.add("shows__label--right");
+  locationTabLabel.innerText = "LOCATION";
+  showsTabletHeading.appendChild(locationTabLabel);
+
+  showsContainer.appendChild(showsTabletHeading);
 
   for (let i = 0; i < shows.length; i++) {
     const show = shows[i];

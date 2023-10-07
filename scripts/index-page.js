@@ -34,6 +34,7 @@ const sumbitHandler = (event) => {
 
   if (formName.value == "" || formComment.value == "") {
     if (formName.value == "") {
+      formName.classList.add("form__input-active");
       formName.placeholder = "Ensure you input a name here!";
       formName.classList.add("form__invalid-input");
     } else if (formComment.value == "") {
@@ -41,10 +42,6 @@ const sumbitHandler = (event) => {
       formComment.classList.add("form__invalid-input");
       return;
     }
-  } else {
-    window.alert(
-      `This form comment has been successfully submitted by ${formName.value}`
-    );
   }
 
   comments.push(comment);

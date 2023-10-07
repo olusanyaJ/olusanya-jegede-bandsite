@@ -65,134 +65,137 @@
   }
 }
 
-// .shows {
-//   padding: 1rem;
+.shows__label--left {
+  margin-left: 4rem;
+}
+.shows__label--right {
+  margin-right: 15rem;
+}
 
-//   @include tablet {
-//     padding: 0;
-//   }
+.shows {
+  @include tablet {
+    padding: 0;
+    padding-bottom: 1.5rem;
+  }
 
-//   &__container {
-//     @include tablet {
-//       padding: 1rem 3rem;
-//     }
+  &__container {
+    @include tablet {
+      padding: 1rem 3rem;
+    }
 
-//     @include desktop {
-//       display: flex;
-//       padding: 2rem 1rem 1rem;
-//     }
-//   }
+    @include desktop {
+      display: flex;
+      padding: 2rem 1rem 1rem;
+    }
+  }
 
-//   &__heading {
-//     @include page-header;
-//     @include tablet {
-//       @include subheader;
-//     }
+  &__heading {
+    padding: 0 1rem;
+    margin-bottom: 0;
+    @include page-header;
+    @include tablet {
+      padding: 0 1rem;
+      @include subheader;
+    }
 
-//     @include desktop {
-//       @include page-header;
-//       margin-top: 0;
-//       margin-bottom: 0;
-//       margin-right: 7.5rem;
-//     }
-//   }
+    @include desktop {
+      @include page-header;
+      margin-top: 0;
+      margin-bottom: 0;
+      margin-right: 7.5rem;
+    }
+  }
 
-//   &__wrap {
-//     @include desktop {
-//       width: 100%;
-//     }
-//   }
+  &__wrap {
+    @include desktop {
+      width: 100%;
+    }
+  }
 
-//   &__labels {
-//     display: none;
-//     @include tablet {
-//       display: flex;
-//       font-weight: 600;
-//       justify-content: space-between;
-//     }
-//     @include desktop {
-//       padding-top: 1rem;
-//     }
-//   }
+  &__labels {
+    display: none;
+    @include tablet {
+      padding: 0 1rem;
+      display: flex;
+      justify-content: space-between;
+    }
+    @include desktop {
+      padding-top: 1rem;
+    }
+  }
 
-//   &__label {
-//     @include desktop {
-//       font-size: 1.125rem;
-//       margin-bottom: 0;
-//     }
-//     &--edit {
-//       margin-left: 4rem;
-//     }
+  &__label {
+    @include labels-and-buttons;
+    @include desktop {
+      margin-bottom: 0;
+    }
+  }
+}
 
-//     &--mg {
-//       margin-right: 16.5rem;
-//     }
-//   }
+.show {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.0625rem solid $secondary-color-mercury;
+  @include tablet {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  @include desktop {
+    padding: 1rem;
+  }
 
-//   &__button {
-//     display: none;
+  &__label {
+    padding: 0 1rem;
+    @include tablet {
+      padding: 0;
+      display: none;
+    }
+  }
+  &__date,
+  &__venue,
+  &__location {
+    padding: 0 1rem;
+    @include subheader;
+    @include tablet {
+      padding: 0;
+      font-size: 1.125rem;
+      margin: 0;
+    }
+  }
 
-//     @include tablet {
-//       display: block;
-//       width: auto;
-//       padding: 0.5rem;
-//       border-radius: 5px;
-//       color: $primary-color-white;
-//       background-color: $primary-color-black;
-//     }
-//   }
-// }
+  &__venue,
+  &__location {
+    font-weight: 300;
+  }
 
-// .show {
-//   @include tablet {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//   }
-//   @include desktop {
-//     padding: 1.5rem 0;
-//   }
+  &__button {
+    width: 90%;
+    margin: 0 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: $primary-color-white;
+    background-color: $primary-color-black;
+    cursor: pointer;
+    @include labels-and-buttons;
+    @include tablet {
+      margin: 0;
+      width: auto;
+      padding: 0.5rem 1.5rem;
+    }
+  }
 
-//   &__label {
-//     @include tablet {
-//       display: none;
-//     }
-//   }
-//   &__date,
-//   &__venue,
-//   &__location {
-//     @include subheader;
-//     @include tablet {
-//       font-size: 1.125rem;
-//       margin: 0;
-//     }
-//   }
+  &__button:hover {
+    background-color: $secondary-color-black;
+  }
+}
 
-//   &__button {
-//     width: 100%;
-//     padding: 1rem;
-//     border-radius: 5px;
-//     color: $primary-color-white;
-//     background-color: $primary-color-black;
-//     font-weight: 600;
-//     @include labels-and-buttons;
-//     font-size: 1rem;
-//     @include tablet {
-//       width: auto;
-//       padding: 0.5rem 1.5rem;
-//     }
-//   }
+.show:hover {
+  cursor: pointer;
+  background-color: $secondary-color-alabaster;
+}
 
-//   &__divider {
-//     stroke-width: 0.0625rem;
-//     max-width: 100%;
-//     fill: $secondary-color-mercury;
-//     margin: 1.5rem 0;
-//     @include tablet {
-//       margin: 1rem 0;
-//     }
-//     @include desktop {
-//       margin: 1rem 0;
-//     }
-//   }
-// }
+.show:active {
+  background-color: $secondary-color-mercury;
+}
