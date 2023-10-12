@@ -1,36 +1,14 @@
-const comments = [
-  {
-    name: "Connor Walton",
-    date: new Date(2021, 2, 17),
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Emilie Beach",
-    date: new Date(2021, 1, 9),
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Miles Acosta",
-    date: new Date(2020, 12, 20),
-    comment:
-      "I can t stop listening. Every time I hear one of their songs the vocals it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can t get enough.",
-  },
-];
-
-const sumbitHandler = (event) => {
+const sumbitHandler = async (event) => {
   event.preventDefault();
   const form = event.target;
 
   const comment = {
     name: form.name.value,
-    date: new Date(),
     comment: form.comment.value,
   };
 
-  let formName = document.querySelector(".form__input");
-  let formComment = document.querySelector(".form__area");
+  const formName = document.querySelector(".form__input");
+  const formComment = document.querySelector(".form__area");
 
   if (formName.value == "" || formComment.value == "") {
     if (formName.value == "") {
@@ -44,7 +22,9 @@ const sumbitHandler = (event) => {
     }
   }
 
-  comments.push(comment);
+  await bandSiteAPI.postComment(comment);
+
+  await bandSiteAPI.getComments();
 
   displayComments();
 
@@ -77,7 +57,31 @@ const displayCommentCard = (comment) => {
 
   const commentDate = document.createElement("p");
   commentDate.classList.add("comments__date");
-  commentDate.innerText = comment.date.toLocaleDateString();
+  const realCommentTime = () => {
+    const currentDate = new Date();
+    const timestampDate = new Date(comment.timestamp);
+    const timeDifference = currentDate - timestampDate;
+    const millisecondInOneHour = 1000 * 60 * 60;
+    const millisecondInOneMinute = 1000 * 60;
+    const hoursAgo = Math.floor(timeDifference / millisecondInOneHour);
+    if (hoursAgo === 0) {
+      const minutesAgo = Math.floor(timeDifference / millisecondInOneMinute);
+      if (minutesAgo < 1) {
+        return "Just now";
+      } else if (minutesAgo === 1) {
+        return "1 minute ago";
+      } else {
+        return `${minutesAgo} minutes ago`;
+      }
+    } else if (hoursAgo === 1) {
+      return "1 hour ago";
+    } else if (hoursAgo <= 24) {
+      return `${hoursAgo} hours ago`;
+    } else {
+      return timestampDate.toLocaleDateString();
+    }
+  };
+  commentDate.innerText = realCommentTime(comment.timestamp);
   commentDetails.appendChild(commentDate);
 
   const comments = document.createElement("p");
@@ -94,11 +98,20 @@ const displayCommentCard = (comment) => {
 const displayComments = () => {
   commentsList.innerHTML = "";
 
-  for (let i = 0; i < comments.length; i++) {
-    const comment = comments[i];
+  for (let i = 0; i < commentList.length; i++) {
+    const sortedComments = commentList.sort(function (a, b) {
+      return b.timestamp - a.timestamp;
+    });
+    const comment = sortedComments[i];
 
     displayCommentCard(comment);
   }
 };
 
-displayComments();
+const main = async () => {
+  await bandSiteAPI.getComments();
+
+  displayComments();
+};
+
+main();

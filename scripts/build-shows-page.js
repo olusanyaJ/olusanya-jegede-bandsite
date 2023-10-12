@@ -1,41 +1,16 @@
-const shows = [
-  {
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Oct 15 2021 ",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const clickHandler = (event) => {
+  event.preventDefault();
+
+  const selectedCard = event.target;
+  selectedCard.classList.add("show__selected");
+};
 
 const showsContainer = document.querySelector(".shows__wrap");
 
 const displayShowCard = (show) => {
   const showsListing = document.createElement("article");
   showsListing.classList.add("show");
+  showsListing.addEventListener("click", clickHandler);
 
   const dateLabel = document.createElement("p");
   dateLabel.classList.add("show__label");
@@ -44,7 +19,9 @@ const displayShowCard = (show) => {
 
   const showDate = document.createElement("p");
   showDate.classList.add("show__date");
-  showDate.innerText = show.date;
+  const timestampDateFormat = new Date(show.date);
+  const showDateString = timestampDateFormat.toDateString();
+  showDate.innerText = showDateString;
   showsListing.appendChild(showDate);
 
   const venueLabel = document.createElement("p");
@@ -54,7 +31,7 @@ const displayShowCard = (show) => {
 
   const showVenue = document.createElement("p");
   showVenue.classList.add("show__venue");
-  showVenue.innerText = show.venue;
+  showVenue.innerText = show.place;
   showsListing.appendChild(showVenue);
 
   const locationLabel = document.createElement("p");
@@ -100,11 +77,16 @@ const displayShows = () => {
 
   showsContainer.appendChild(showsTabletHeading);
 
-  for (let i = 0; i < shows.length; i++) {
-    const show = shows[i];
+  for (let i = 0; i < showsList.length; i++) {
+    const show = showsList[i];
 
     displayShowCard(show);
   }
 };
 
-displayShows();
+const main = async () => {
+  await bandSiteAPI.getShows();
+  displayShows();
+};
+
+main();

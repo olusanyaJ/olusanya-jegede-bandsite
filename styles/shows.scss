@@ -133,6 +133,12 @@
 }
 
 .show {
+  &__selected {
+    // background-color: $secondary-color-mercury;
+    background-color: green;
+    color: red;
+  }
+
   padding-top: 1rem;
   padding-bottom: 1.5rem;
   border-bottom: 0.0625rem solid $secondary-color-mercury;
@@ -196,6 +202,6 @@
   background-color: $secondary-color-alabaster;
 }
 
-.show:active {
-  background-color: $secondary-color-mercury;
-}
+// .show:active {
+//   background-color: $secondary-color-mercury;
+// }

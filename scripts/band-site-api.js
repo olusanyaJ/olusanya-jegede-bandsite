@@ -16,7 +16,6 @@ class BandSiteAPI {
       );
       showsList = response.data;
       return showsList;
-      // displayShows();
     } catch (error) {
       console.error(error);
     }
@@ -28,16 +27,14 @@ class BandSiteAPI {
     );
     commentList = response.data;
     return commentList;
-    // displayComments();
   }
 
-  async postComment() {
+  async postComment(newComment) {
     const response = await axios.post(
       baseURL + "comments/" + "?api_key=" + apiKey,
       newComment
     );
-    comment = response.data;
-    displayComments();
+    const comment = response.data;
   }
 }
 

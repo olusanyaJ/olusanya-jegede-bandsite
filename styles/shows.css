@@ -223,6 +223,10 @@ body {
   padding-bottom: 1.5rem;
   border-bottom: 0.0625rem solid #e1e1e1;
 }
+.show__selected {
+  background-color: green;
+  color: red;
+}
 @media screen and (min-width: 768px) {
   .show {
     padding: 1rem;
@@ -298,8 +302,4 @@ body {
 .show:hover {
   cursor: pointer;
   background-color: #fafafa;
-}
-
-.show:active {
-  background-color: #e1e1e1;
 }/*# sourceMappingURL=shows.css.map */
