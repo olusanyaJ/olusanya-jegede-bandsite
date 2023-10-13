@@ -133,10 +133,14 @@
 }
 
 .show {
-  &__selected {
-    // background-color: $secondary-color-mercury;
-    background-color: green;
-    color: red;
+  &:hover {
+    cursor: pointer;
+    background-color: $secondary-color-alabaster;
+  }
+
+  // We repeat the .show selector here to increase specificity to override the :hover selector
+  &.show--selected {
+    background-color: $secondary-color-mercury;
   }
 
   padding-top: 1rem;
@@ -195,11 +199,6 @@
   &__button:hover {
     background-color: $secondary-color-black;
   }
-}
-
-.show:hover {
-  cursor: pointer;
-  background-color: $secondary-color-alabaster;
 }
 
 // .show:active {

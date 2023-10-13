@@ -1,8 +1,12 @@
 const clickHandler = (event) => {
   event.preventDefault();
 
-  const selectedCard = event.target;
-  selectedCard.classList.add("show__selected");
+  const clickedCard = event.currentTarget;
+  const showSelected = document.querySelector(".show--selected");
+  if (showSelected) {
+    showSelected.classList.remove("show--selected");
+  }
+  clickedCard.classList.add("show--selected");
 };
 
 const showsContainer = document.querySelector(".shows__wrap");

@@ -2,7 +2,7 @@ const baseURL = "https://project-1-api.herokuapp.com/";
 const apiKey = "c2a6b916-1111-47a6-90da-29400215b7aa";
 
 let showsList = [];
-let commentList = [];
+let commentsList = [];
 
 class BandSiteAPI {
   constructor(apiKey) {
@@ -22,19 +22,27 @@ class BandSiteAPI {
   }
 
   async getComments() {
-    const response = await axios.get(
-      baseURL + "comments/" + "?api_key=" + apiKey
-    );
-    commentList = response.data;
-    return commentList;
+    try {
+      const response = await axios.get(
+        baseURL + "comments/" + "?api_key=" + apiKey
+      );
+      commentsList = response.data;
+      return commentsList;
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async postComment(newComment) {
-    const response = await axios.post(
-      baseURL + "comments/" + "?api_key=" + apiKey,
-      newComment
-    );
-    const comment = response.data;
+    try {
+      const response = await axios.post(
+        baseURL + "comments/" + "?api_key=" + apiKey,
+        newComment
+      );
+      const comment = response.data;
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 

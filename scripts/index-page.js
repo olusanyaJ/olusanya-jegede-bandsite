@@ -34,7 +34,7 @@ const sumbitHandler = async (event) => {
 const formEl = document.querySelector(".form");
 formEl.addEventListener("submit", sumbitHandler);
 
-const commentsList = document.querySelector(".comments__wrapper");
+const commentsListEL = document.querySelector(".comments__wrapper");
 
 const displayCommentCard = (comment) => {
   const commentFlex = document.createElement("div");
@@ -92,14 +92,14 @@ const displayCommentCard = (comment) => {
   commentFlex.appendChild(commentImage);
   commentFlex.appendChild(commentCard);
 
-  commentsList.appendChild(commentFlex);
+  commentsListEL.appendChild(commentFlex);
 };
 
 const displayComments = () => {
-  commentsList.innerHTML = "";
+  commentsListEL.innerHTML = "";
 
-  for (let i = 0; i < commentList.length; i++) {
-    const sortedComments = commentList.sort(function (a, b) {
+  for (let i = 0; i < commentsList.length; i++) {
+    const sortedComments = commentsList.sort(function (a, b) {
       return b.timestamp - a.timestamp;
     });
     const comment = sortedComments[i];
